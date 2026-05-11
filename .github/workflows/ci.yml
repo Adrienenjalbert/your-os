@@ -21,8 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -40,8 +38,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -56,8 +52,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -76,14 +70,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @your-os/brand-lint build
+      # `...` includes upstream workspace dependencies (e.g. @your-os/tenant-config)
+      # so tsup's dts generation can resolve their type declarations.
+      - run: pnpm --filter "@your-os/brand-lint..." build
       - name: Run byte-equivalence test against Career Hub fixture
         run: pnpm --filter @your-os/example-career-hub-snapshot test --run brand-lint
 
@@ -96,8 +90,6 @@ jobs:
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
