@@ -1,0 +1,46 @@
+# Local dev for the minimal-strapi example. Brings up Postgres + a fresh Strapi
+# 5 instance pre-seeded by `pnpm exec your-os strapi:migrate --tenant minimal-strapi`.
+# Production deploy comes from @your-os/strapi-deploy templates.
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
+    ports:
+      - "5432:5432"
+    volumes:
+      - strapi-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U strapi"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  strapi:
+    image: strapi/strapi:5
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_URL: postgres://strapi:strapi@postgres:5432/strapi
+      HOST: 0.0.0.0
+      PORT: 1337
+      APP_KEYS: ${APP_KEYS:-toBeModified1,toBeModified2}
+      API_TOKEN_SALT: ${API_TOKEN_SALT:-tokenSalt}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET:-adminSecret}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT:-transferSalt}
+      JWT_SECRET: ${JWT_SECRET:-jwtSecret}
+      STRAPI_ADMIN_DISABLE_CONTENT_TYPE_BUILDER: "false"
+    ports:
+      - "1337:1337"
+    volumes:
+      - strapi-data:/srv/app
+
+volumes:
+  strapi-pg:
+  strapi-data:

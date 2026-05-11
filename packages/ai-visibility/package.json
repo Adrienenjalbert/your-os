@@ -1,0 +1,44 @@
+{
+  "name": "@your-os/ai-visibility",
+  "version": "0.0.0",
+  "private": true,
+  "description": "AI-search citation tracking. v1 imports Profound/Peec CSV exports; in-house scraping deferred to v2 once design partners confirm citation share matters.",
+  "license": "BUSL-1.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "lint": "biome check src",
+    "clean": "rimraf dist .turbo"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@your-os/typescript-config": "workspace:*",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "yourOs": {
+    "layer": "core",
+    "stability": "alpha"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "identity": {
+    "name": "Career Hub",
+    "slug": "career-hub",
+    "domain": "indeedflex.com",
+    "industry": "flexible-work-marketplace",
+    "businessModel": "b2c"
+  },
+  "audience": {
+    "primaryPersona": {
+      "name": "Students",
+      "pain": "Need work around class schedules",
+      "value": "No-experience roles, flexible shifts, budget tools"
+    }
+  },
+  "conversion": {
+    "primary": "app_install",
+    "ctaPattern": "Find ${range} {role} Shifts"
+  },
+  "brand": {
+    "primaryDistinctiveAsset": "Same Day Pay",
+    "voiceTone": "warm",
+    "readingLevel": "8th_grade",
+    "pov": "second_person"
+  },
+  "seo": {
+    "primarySchemaType": "Article",
+    "pillars": [
+      { "slug": "roles", "name": "Roles", "intent": "informational" },
+      { "slug": "cities", "name": "Cities", "intent": "navigational" },
+      { "slug": "guides", "name": "Guides", "intent": "informational" },
+      { "slug": "tools", "name": "Tools", "intent": "transactional" },
+      { "slug": "financial-tips", "name": "Financial Tips", "intent": "informational" },
+      { "slug": "industries", "name": "Industries", "intent": "informational" }
+    ]
+  },
+  "contentStorage": { "mode": "code" }
+}

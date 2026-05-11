@@ -1,0 +1,21 @@
+{
+  "_note": "Expected lintFile output for fixtures/brand-lint/sample-content.ts when run with @your-os/brand-lint defaultRules (which mirror Career Hub's brand-lint.mjs defaults). Generated from a verified run; regen via 'pnpm --filter @your-os/example-career-hub-snapshot update-baselines'.",
+  "filePath": "fixtures/brand-lint/sample-content.ts",
+  "issues": [
+    {
+      "severity": "block",
+      "rule": "banned_phrase",
+      "lineContains": "revolutionary"
+    },
+    {
+      "severity": "block",
+      "rule": "ai_slop",
+      "lineContains": "In conclusion"
+    },
+    {
+      "severity": "block",
+      "rule": "missing_citation",
+      "lineContains": "$25/hr"
+    }
+  ]
+}

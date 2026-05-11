@@ -1,0 +1,38 @@
+{
+  "identity": {
+    "name": "Minimal Strapi Hub",
+    "slug": "minimal-strapi",
+    "domain": "minimal-strapi.example.com",
+    "industry": "demo",
+    "businessModel": "b2c"
+  },
+  "audience": {
+    "primaryPersona": {
+      "name": "Shift worker",
+      "pain": "Wages and benefits change weekly.",
+      "value": "Quickly find current pay rates by city."
+    }
+  },
+  "conversion": {
+    "primary": "newsletter",
+    "ctaPattern": "Subscribe"
+  },
+  "brand": {
+    "primaryDistinctiveAsset": "Real shifts, real pay",
+    "voiceTone": "neutral, plain-language",
+    "readingLevel": "8th_grade",
+    "pov": "second_person"
+  },
+  "seo": {
+    "primarySchemaType": "Article",
+    "pillars": [{ "slug": "guides", "name": "Guides", "intent": "informational" }]
+  },
+  "contentStorage": {
+    "mode": "strapi",
+    "strapi": {
+      "baseUrl": "https://cms.minimal-strapi.example.com",
+      "deployProvider": "render",
+      "region": "oregon"
+    }
+  }
+}

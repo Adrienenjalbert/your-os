@@ -1,0 +1,21 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "access": "restricted",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": [
+    "@your-os/docs",
+    "@your-os/configurator",
+    "@your-os/control-plane",
+    "@your-os/web",
+    "@your-os/tooling-scripts",
+    "@your-os/example-minimal",
+    "@your-os/example-minimal-strapi",
+    "@your-os/example-employer-hub",
+    "@your-os/example-career-hub-snapshot"
+  ]
+}

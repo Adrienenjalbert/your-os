@@ -1,0 +1,17 @@
+{
+  "name": "@your-os/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared lint config (Biome-first). This package re-exports the canonical biome.json for tenants who want to extend it.",
+  "license": "BUSL-1.1",
+  "type": "module",
+  "main": "./biome.json",
+  "files": ["biome.json", "README.md"],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "yourOs": {
+    "layer": "tooling",
+    "stability": "stable"
+  }
+}

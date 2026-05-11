@@ -1,0 +1,19 @@
+{
+  "name": "@your-os/docs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Public documentation site for the OS. Will be powered by Fumadocs in Phase 1.",
+  "type": "module",
+  "scripts": {
+    "build": "mkdir -p dist && echo 'Fumadocs build pending — see apps/docs/README.md' > dist/index.html",
+    "dev": "echo 'Fumadocs dev pending — see apps/docs/README.md'",
+    "typecheck": "echo 'docs: no TS yet'",
+    "test": "echo 'docs: no tests yet'",
+    "lint": "biome check .",
+    "clean": "rimraf dist .next"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "rimraf": "^6.0.1"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@your-os/example-minimal-strapi",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Bare-minimum Strapi-mode tenant. CI integration test for the Strapi track.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-static.mjs",
+    "dev": "echo 'example-minimal-strapi: dev requires docker-compose up && next dev (tracked elsewhere)'",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "lint": "biome check .",
+    "clean": "rimraf dist .next"
+  },
+  "dependencies": {
+    "@your-os/agent-context": "workspace:*",
+    "@your-os/brand-lint": "workspace:*",
+    "@your-os/content-source": "workspace:*",
+    "@your-os/content-types": "workspace:*",
+    "@your-os/seo": "workspace:*",
+    "@your-os/skills": "workspace:*",
+    "@your-os/strapi-brand-lint-hook": "workspace:*",
+    "@your-os/strapi-codegen": "workspace:*",
+    "@your-os/strapi-deploy": "workspace:*",
+    "@your-os/strapi-seo": "workspace:*",
+    "@your-os/strapi-sync": "workspace:*",
+    "@your-os/strapi-template": "workspace:*",
+    "@your-os/tenant-config": "workspace:*"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.10.5",
+    "@your-os/typescript-config": "workspace:*",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  }
+}

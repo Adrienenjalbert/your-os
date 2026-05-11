@@ -1,0 +1,51 @@
+{
+  "name": "@your-os/web",
+  "version": "0.0.0",
+  "private": true,
+  "description": "v1.1 Web Shell. Hosts Onboarding (configurator UI), Admin Console, and Customise/Control panel. Multi-choice AI cards, hybrid mock/live research, Playwright + axe loop.",
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --port 3001",
+    "start": "next start --port 3001",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium",
+    "lint": "biome check src tests",
+    "loop": "node scripts/web-loop.mjs",
+    "clean": "rimraf .next dist .turbo node_modules/.cache playwright-report test-results quality-report"
+  },
+  "dependencies": {
+    "@your-os/brand-lint": "workspace:*",
+    "@your-os/configurator": "workspace:*",
+    "@your-os/console": "workspace:*",
+    "@your-os/control-plane": "workspace:*",
+    "@your-os/measurement": "workspace:*",
+    "@your-os/tenant-config": "workspace:*",
+    "next": "^15.5.18",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@biomejs/biome": "^1.9.4",
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@your-os/typescript-config": "workspace:*",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.0",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  },
+  "yourOs": {
+    "layer": "app",
+    "stability": "alpha"
+  }
+}

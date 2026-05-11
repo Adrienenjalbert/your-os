@@ -1,0 +1,13 @@
+{
+  "extends": "@your-os/typescript-config/library.json",
+  "include": ["src/**/*", "tenant.config.ts", "scripts/**/*"],
+  "exclude": ["dist", "node_modules", "out"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "noEmit": true,
+    "rootDir": ".",
+    "jsx": "react-jsx",
+    "lib": ["dom", "ES2023"],
+    "types": ["node"]
+  }
+}

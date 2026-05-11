@@ -1,0 +1,20 @@
+# Default reviewers for all OS work
+*                               @indeed-flex/your-os-maintainers
+
+# Per-package owners (drop-in: add team handles when GitHub repo is provisioned)
+/packages/tenant-config/        @indeed-flex/your-os-maintainers
+/packages/content-source/       @indeed-flex/your-os-maintainers
+/packages/seo/                  @indeed-flex/your-os-maintainers
+/packages/brand-lint/           @indeed-flex/your-os-maintainers
+/packages/core/                 @indeed-flex/your-os-maintainers
+/packages/strapi-*/             @indeed-flex/your-os-maintainers
+/apps/configurator/             @indeed-flex/your-os-maintainers
+/apps/control-plane/            @indeed-flex/your-os-maintainers
+
+# Skills + agent context: editorial + engineering joint review
+/packages/skills/               @indeed-flex/your-os-maintainers @indeed-flex/career-hub-editorial
+/packages/agent-context/        @indeed-flex/your-os-maintainers
+/.agents/                       @indeed-flex/your-os-maintainers
+
+# Examples are integration tests; OS team owns
+/examples/                      @indeed-flex/your-os-maintainers

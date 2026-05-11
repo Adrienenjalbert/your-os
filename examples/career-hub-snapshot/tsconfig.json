@@ -1,0 +1,10 @@
+{
+  "extends": "@your-os/typescript-config/library.json",
+  "include": ["**/*.ts"],
+  "exclude": ["dist", "node_modules", "fixtures"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "noEmit": true,
+    "rootDir": "."
+  }
+}

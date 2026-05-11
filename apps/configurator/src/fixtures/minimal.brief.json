@@ -1,0 +1,31 @@
+{
+  "identity": {
+    "name": "Minimal Hub",
+    "slug": "minimal-hub",
+    "domain": "minimal.example.com",
+    "industry": "demo",
+    "businessModel": "b2c"
+  },
+  "audience": {
+    "primaryPersona": {
+      "name": "Demo User",
+      "pain": "Hard to evaluate the OS without a working baseline.",
+      "value": "A tiny tenant that exercises every package."
+    }
+  },
+  "conversion": {
+    "primary": "newsletter",
+    "ctaPattern": "Subscribe"
+  },
+  "brand": {
+    "primaryDistinctiveAsset": "All Demo, All Day",
+    "voiceTone": "warm, plain-language",
+    "readingLevel": "8th_grade",
+    "pov": "second_person"
+  },
+  "seo": {
+    "primarySchemaType": "Article",
+    "pillars": [{ "slug": "guides", "name": "Guides", "intent": "informational" }]
+  },
+  "contentStorage": { "mode": "code" }
+}

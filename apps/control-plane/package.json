@@ -1,0 +1,34 @@
+{
+  "name": "@your-os/control-plane",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Hosted dashboard + weekly digest agent + autoresearch loop closer.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "lint": "biome check src",
+    "clean": "rimraf dist .next .turbo"
+  },
+  "dependencies": {
+    "@your-os/content-types": "workspace:*",
+    "@your-os/strapi-template": "workspace:*",
+    "@your-os/tenant-config": "workspace:*",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.10.5",
+    "@your-os/typescript-config": "workspace:*",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  }
+}

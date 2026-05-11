@@ -1,0 +1,24 @@
+/**
+ * Default OS design tokens for Tailwind v4 @theme.
+ * Tenants override per tenant.config.ts brand.
+ * See packages/core for usage in shared shells.
+ */
+@theme {
+  --color-brand-primary: oklch(0.55 0.2 250);
+  --color-brand-secondary: oklch(0.7 0.15 200);
+  --color-brand-accent: oklch(0.7 0.18 30);
+  --color-brand-ink: oklch(0.2 0.02 250);
+  --color-brand-paper: oklch(0.99 0.005 250);
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Inter Display", "Inter", system-ui, sans-serif;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}

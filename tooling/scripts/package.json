@@ -1,0 +1,6 @@
+{
+  "name": "@your-os/tooling-scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module"
+}

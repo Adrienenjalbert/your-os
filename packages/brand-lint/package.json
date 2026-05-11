@@ -1,0 +1,50 @@
+{
+  "name": "@your-os/brand-lint",
+  "version": "0.0.0",
+  "private": true,
+  "description": "DBA prevalence (Romaniuk ≥80%) + banned-phrase + AI-slop + GEO citation density linter. Reads tenantConfig.brand.",
+  "license": "BUSL-1.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "your-os-brand-lint": "./dist/cli.js"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "lint": "biome check src",
+    "clean": "rimraf dist .turbo"
+  },
+  "dependencies": {
+    "@your-os/tenant-config": "workspace:*"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.10.5",
+    "@your-os/typescript-config": "workspace:*",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "yourOs": {
+    "layer": "core",
+    "stability": "stable"
+  }
+}

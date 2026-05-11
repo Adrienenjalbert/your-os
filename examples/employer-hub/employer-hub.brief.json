@@ -1,0 +1,48 @@
+{
+  "identity": {
+    "name": "Employer Hub",
+    "slug": "employer-hub",
+    "domain": "employers.indeedflex.com",
+    "industry": "flexible-staffing",
+    "businessModel": "b2b"
+  },
+  "audience": {
+    "primaryPersona": {
+      "name": "HR Director",
+      "pain": "Filling shifts on short notice without quality drop or compliance risk.",
+      "value": "Pre-vetted W-2 workers, transparent ROI, integrations with our ATS/payroll."
+    },
+    "primaryICP": {
+      "role": "VP of Operations",
+      "industry": "warehousing"
+    }
+  },
+  "conversion": {
+    "primary": "demo_booking",
+    "ctaPattern": "Book a 30-min demo"
+  },
+  "brand": {
+    "primaryDistinctiveAsset": "Pre-vetted W-2 workers",
+    "voiceTone": "confident, data-led, no fluff",
+    "readingLevel": "10th_grade",
+    "pov": "third_person"
+  },
+  "seo": {
+    "primarySchemaType": "Article",
+    "pillars": [
+      { "slug": "case-studies", "name": "Case Studies", "intent": "commercial" },
+      { "slug": "roi-calculators", "name": "ROI Calculators", "intent": "transactional" },
+      { "slug": "integrations", "name": "Integrations", "intent": "commercial" },
+      { "slug": "comparisons", "name": "Comparisons", "intent": "commercial" },
+      { "slug": "playbooks", "name": "Playbooks", "intent": "informational" }
+    ]
+  },
+  "contentStorage": {
+    "mode": "strapi",
+    "strapi": {
+      "baseUrl": "https://cms.employers.indeedflex.com",
+      "deployProvider": "render",
+      "region": "oregon"
+    }
+  }
+}

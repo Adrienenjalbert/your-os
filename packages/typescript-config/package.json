@@ -1,0 +1,15 @@
+{
+  "name": "@your-os/typescript-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Shared tsconfig bases (base/library/nextjs/node)",
+  "license": "BUSL-1.1",
+  "files": ["base.json", "library.json", "nextjs.json", "node.json"],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "yourOs": {
+    "layer": "tooling",
+    "stability": "stable"
+  }
+}

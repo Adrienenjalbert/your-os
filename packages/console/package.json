@@ -1,0 +1,37 @@
+{
+  "name": "@your-os/console",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Headless admin console: view models + reducers + keyboard map. Framework-agnostic; mounted by apps/web and any future CLI/TUI shell.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "lint": "biome check src",
+    "clean": "rimraf dist .next .turbo"
+  },
+  "dependencies": {
+    "@your-os/control-plane": "workspace:*",
+    "@your-os/measurement": "workspace:*",
+    "@your-os/tenant-config": "workspace:*"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.10.5",
+    "@your-os/typescript-config": "workspace:*",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  },
+  "yourOs": {
+    "layer": "core",
+    "stability": "alpha"
+  }
+}

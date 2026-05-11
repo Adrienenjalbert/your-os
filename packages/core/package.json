@@ -1,0 +1,55 @@
+{
+  "name": "@your-os/core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "CMS-agnostic page shells: StandardPageLayout, ContentPageShell, ToolPageShell, RolePageShell, FAQSection, CTASection.",
+  "license": "BUSL-1.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "lint": "biome check src",
+    "clean": "rimraf dist .turbo"
+  },
+  "dependencies": {
+    "@your-os/seo": "workspace:*",
+    "@your-os/tenant-config": "workspace:*"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@your-os/typescript-config": "workspace:*",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  },
+  "yourOs": {
+    "layer": "core",
+    "stability": "alpha"
+  }
+}

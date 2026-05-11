@@ -1,0 +1,43 @@
+{
+  "name": "@your-os/pseo-engine",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Programmatic SEO scaffolding. N-dimensional cell generation. Always code-source.",
+  "license": "BUSL-1.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "lint": "biome check src",
+    "clean": "rimraf dist .turbo"
+  },
+  "devDependencies": {
+    "@your-os/typescript-config": "workspace:*",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0",
+    "rimraf": "^6.0.1",
+    "@biomejs/biome": "^1.9.4"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "yourOs": {
+    "layer": "core",
+    "stability": "alpha"
+  }
+}

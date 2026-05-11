@@ -1,0 +1,47 @@
+{
+  "name": "your-os",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Multi-tenant SEO content OS. Powers Career Hub (B2C) and Employer Hub (B2B). See README.md.",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "check:readme": "node tooling/scripts/check-readme.mjs",
+    "check:readme:write": "node tooling/scripts/check-readme.mjs --write",
+    "check:architecture": "node tooling/scripts/generate-architecture.mjs",
+    "check:architecture:write": "node tooling/scripts/generate-architecture.mjs --write",
+    "check:byte-equivalence": "pnpm --filter @your-os/example-career-hub-snapshot test --run brand-lint",
+    "check:docs": "pnpm run check:readme && pnpm run check:architecture",
+    "check": "pnpm run check:docs && pnpm turbo run lint typecheck test build",
+    "verify": "pnpm run check:docs && pnpm run lint && pnpm turbo run typecheck test build && pnpm run check:byte-equivalence",
+    "clean": "turbo run clean && rimraf node_modules",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish",
+    "web:loop": "pnpm --filter @your-os/web loop",
+    "web:dev": "pnpm --filter @your-os/web dev"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@changesets/cli": "^2.27.11",
+    "@types/node": "^22.10.5",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
+  }
+}
